@@ -2,7 +2,7 @@ package com.Problems;
 
 import java.util.Scanner;
 
-public class ReverseString {
+public class Q1_ReverseString {
 
     public static void main(String[] args) {
 
@@ -25,6 +25,10 @@ public class ReverseString {
         // Reverse the input string using StringBuilder and print the result
         String reverseStringBuilder = reverseStringBuilder(input);
         System.out.println("Reversed stringBuilder: " + reverseStringBuilder);
+        
+        // Reverse the input string using StringBuilder1 and print the result
+        String reverseStringBuilder1 = reverseStringBuilder1(input);
+        System.out.println("Reversed stringBuilder1: " + reverseStringBuilder1);
 
         // Close the scanner to release resources
         scanner.close();
@@ -35,7 +39,7 @@ public class ReverseString {
     public static String reverseString(String str) {
         int length = str.length();
         System.out.println(length);
-        String reversed = " ";
+        String reversed = "";
 
         // Iterate through the characters of the string in reverse order
         for (int i = length - 1; i >= 0; i--) {
@@ -59,7 +63,14 @@ public class ReverseString {
         // Convert the reversed StringBuilder back to a string
         return stringBuilder.toString();
     }
-
-
+    
+    // 3. String Builder with for loop
+    public static String reverseStringBuilder1(String str) {
+        StringBuilder reversed = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed.append(str.charAt(i));
+        }
+        return reversed.toString();
+    }
 
 }
